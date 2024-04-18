@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+
+        <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li class="active">Register</li>
+                <li>Contact</li>
+            </ul>
+            <div class="logo"><img src="./assets/logo.png"></div>
+        </div>
+        <div class="wrapper register-wrapper">
+
+            <img src="./assets/bazylia-removebg-preview.png"  class="bazylia"/>
+
+            <div class="form">
+                <form action = "/jeszczeniewiem" method="post">
+                    <div class="input name">
+                        <input type="text" id="name" name="name" required placeholder="Jak masz na imię?">
+                    </div>
+                    <div class="input email">
+                        <input type="email" id="email" name="email" required placeholder="Jaki jest twój adres email">
+                    </div>
+                    <div class="input password">
+                        <input type="text" id="password" name="password" required placeholder="Wymyśl hasło">
+                    </div>
+                    <div class="input password-ver last-child">
+                        <input type="text" id="password-ver" name="password-ver" required placeholder="Powtórz hasło">
+                    </div>
+                    <div class="button big-button"><button type="submit"></button><span>rejestruj</span></div>
+
+                </form>
+
+            </div>
+    </div>
+    </body>
+</html>

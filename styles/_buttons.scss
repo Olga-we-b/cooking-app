@@ -1,0 +1,17 @@
+@import './vars';
+
+.big-button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $primaryColor;
+
+    button {
+        width: 100%;
+        height: 100%;
+        opacity: 1; /* Ukrycie samego przycisku */
+ 
+    }
+}

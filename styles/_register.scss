@@ -1,0 +1,65 @@
+@import './vars';
+@import './buttons';
+
+.register-wrapper {
+    background-image: url(../assets/marblebgr.jpg);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    
+}
+.bazylia{
+    width: 15%;
+    transform: rotate(-25deg);
+    position: absolute;
+    top: 10vh;
+    left: 25vw;
+}
+.form {
+    padding: 12%;
+    border-radius: 5%;
+    background-color: white;
+    z-index: 99999;
+
+
+    div.input {
+        display: flex;
+        border-bottom: 2px solid $darkGreen;
+        width: 100%;
+        height: 100%;
+        width: 325px;
+        padding-bottom: 2%;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding-block: 12px;
+            border: none;
+            background-color: transparent;
+            font-size: 12pt; 
+            padding-left: 3%;
+
+            &:focus {
+                outline: none;
+            }
+            
+        }
+    }
+
+    div.last-child {
+        margin-bottom: 10%;
+    }
+
+
+}
