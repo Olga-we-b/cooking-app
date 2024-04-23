@@ -19,6 +19,12 @@
     padding: 10%;
     
 }
+.big-pizza {
+    position: absolute;
+    top: 60%;
+    left: 85vw;
+    transform: rotate(-80deg);
+}
 .bazylia{
     width: 15%;
     transform: rotate(-25deg);
@@ -31,7 +37,10 @@
     border-radius: 5%;
     background-color: white;
     z-index: 99999;
-
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 
     div.input {
         display: flex;
