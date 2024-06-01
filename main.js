@@ -1,31 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('userForm');
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Zatrzymaj domyślne przesyłanie formularza
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Pobierz wartości wpisane przez użytkownika
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordVer = document.getElementById('password-ver').value;
 
-        const formData = new FormData(form);
-        const jsonObject = {};
+    // Sprawdź, czy hasła się zgadzają
+    if (password !== passwordVer) {
+        alert("Hasła się nie zgadzają!");
+        return;
+    }
 
-        formData.forEach(function(value, key) {
-            jsonObject[key] = value;
-        });
-
-        const jsonData = JSON.stringify(jsonObject);
-
-        fetch('/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: jsonData
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    });
-});                  
+    // Przekieruj na stronę user_credentials z parametrami URL
+    window.location.href = `user_credentials.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+});
