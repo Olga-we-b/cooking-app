@@ -1,19 +1,31 @@
-document.addEventListener('DOMContentLoaded', function(){
-    var form = document.querySelector('form');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('userForm');
 
-    form.addEventListener('submit', function(event){
+    form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        let formData = new FormData(form);
-        let jsonObiect = {};
+        const formData = new FormData(form);
+        const jsonObject = {};
 
-        formData.forEach(function(value, key){
-            jsonObiect[key] = value;
+        formData.forEach(function(value, key) {
+            jsonObject[key] = value;
         });
 
-        let jsonData = JSON.stringify(jsonObiect);
+        const jsonData = JSON.stringify(jsonObject);
 
-        console.log(jsonData)
-
-    })
-})
+        fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+});                  

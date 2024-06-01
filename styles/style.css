@@ -128,6 +128,12 @@
   background-color: #ee892f;
 }
 
+.callAction {
+  font-weight: bold;
+  font-size: 12pt;
+  color: red;
+}
+
 * {
   padding: 0;
   margin: 0;
