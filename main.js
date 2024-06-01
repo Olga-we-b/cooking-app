@@ -7,12 +7,15 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const password = document.getElementById('password').value;
     const passwordVer = document.getElementById('password-ver').value;
 
-    // Sprawdź, czy hasła się zgadzają
-    if (password !== passwordVer) {
-        alert("Hasła się nie zgadzają!");
-        return;
-    }
+   const userData = {
+    name: name,
+    email: email,
+    password: password,
+    passwordVer: passwordVer
+   }
 
-    // Przekieruj na stronę user_credentials z parametrami URL
-    window.location.href = `user_credentials.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
+   localStorage.setItem('userData', JSON.stringify(userData));
+   window.location.href = 'user_credentials.html';
+
+
 });
